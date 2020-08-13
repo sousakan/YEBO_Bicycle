@@ -1,0 +1,45 @@
+@use 'vars';
+
+.socials
+{
+    background-color: vars.$light_gray;
+
+    padding: 125px 0 175px;
+    width: 100%;
+}
+
+.socials__icon
+{
+    display: block;
+    margin: 0 auto 32px;
+}
+
+.socials__title
+{
+    text-align: center;
+    font-size: 18px;
+    font-weight: bold;
+    color: vars.$black;
+
+    margin-bottom: 17px;
+}
+
+.socials__span
+{
+    &--gray
+    {
+        font-weight: 300;
+        color: vars.$gray;
+    }
+}
+
+.socials__text
+{
+    text-align: center;
+
+    font-size: 24px;
+    font-weight: normal;
+    font-style: italic;
+    color: vars.$gray;
+}
+

@@ -1,0 +1,9 @@
+@use 'vars';
+
+.container
+{
+    margin: 0 auto;
+    padding: 0 15px;
+
+    max-width: vars.$breakpoint_xl;
+}

@@ -1,0 +1,64 @@
+@use 'vars';
+
+.footer
+{
+    padding: 87px;
+
+    background-color: vars.$light_gray;
+
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.footer__left
+{
+    width: 260px;
+}
+
+.footer__right
+{
+    display: flex;
+    align-items: center;
+}
+
+.footer__logo
+{
+    margin-left: 10px;
+}
+
+.footer__title
+{
+    font-size: 16px;
+    font-weight: bold;
+    line-height: 20px;
+    color: vars.$gray;
+}
+
+.footer__text
+{
+    font-size: 14px;
+    font-weight: normal;
+    line-height: 20px;
+    font-style: italic;
+    color: vars.$gray;
+}
+
+.footer__links
+{
+    width: 135px;
+    height: 34px;
+
+    display: flex;
+    justify-content: space-between;
+}
+
+.footer__icon
+{
+    transition: transform .2s linear;
+
+    &:hover
+    {
+        transform: rotate(360deg);
+    }
+}

@@ -1,0 +1,36 @@
+@use 'vars';
+
+.about
+{
+    padding: 120px 0;
+    width: 100%;
+    background-color: vars.$light_gray;
+}
+
+.about__logo
+{
+    display: block;
+    margin: 0 auto 30px;
+    width: 52px;
+    height: 43px;
+}
+
+.about__title
+{
+    margin-bottom: 26px;
+
+    text-align: center;
+    font-size: 18px;
+    font-weight: bold;
+    letter-spacing: 3px;
+    font-family: inherit;
+}
+
+.about__text
+{
+    text-align: center;
+    color: vars.$gray;
+    font-size: 18px;
+    font-weight: normal;
+    line-height: 34px;
+}

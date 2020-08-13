@@ -1,0 +1,72 @@
+@use 'vars';
+
+.nav
+{
+    display: flex;
+    justify-content: space-between;    
+}
+
+.nav__links
+{
+    list-style-type: none;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex: 1;
+}
+
+.nav__item
+{
+    position: relative;
+
+    &:first-child::after
+    {
+        content: ".";
+        position: absolute;
+        right: -50px
+    }
+}
+
+.nav__link
+{
+    text-transform: uppercase;
+    text-decoration: none;
+
+    color: vars.$nav_black;
+    font-weight: bold;
+
+    position: relative;
+
+    &:hover
+    {
+        &::after
+        {
+            content: "";
+
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+
+            width: 100%;
+            height: 1px;
+
+            background-color: vars.$nav_black;
+        }
+
+    }
+}
+
+.nav__img
+{
+    margin: 0 55px
+}
+
+.nav__logo
+{
+    display: block;
+    width: 94px;
+    height: 85px;
+}
+
+

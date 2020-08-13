@@ -1,0 +1,37 @@
+@use 'vars';
+
+
+/* ===== Blocks ===== */
+
+@use "blocks/intro";
+@use "blocks/header";
+@use "blocks/nav";
+@use "blocks/about";
+@use "blocks/container";
+@use "blocks/gallery";
+@use "blocks/socials";
+@use "blocks/shop";
+@use "blocks/subscribe";
+@use "blocks/footer";
+
+
+html
+{
+    font-size: 15px;
+    font-family: 'Lato', sans-serif;
+}
+
+body
+{
+    font-size: 1rem;
+}
+
+
+*,
+*:before,
+*:after
+{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
