@@ -1,7 +1,10 @@
+@use 'vars';
+
 .header
 {
-    width: 625px;
-    height: 85px;
+    width: 100%;
 
-    margin: 0 auto;
+    position: relative; 
+    //position: fixed; 
+    //z-index: 100;
 }

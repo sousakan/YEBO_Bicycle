@@ -1,0 +1,47 @@
+.slick-list
+{
+    overflow: hidden;
+}
+
+.slick-track
+{
+    display: flex;
+
+    align-items: flex-start;
+}
+
+
+.socials__slider
+{
+    .slick-dots
+    {
+        list-style: none;
+        
+        display: flex;
+        justify-content: space-between;
+
+        margin: 100px auto 0;
+
+        width: 50px;
+    }
+
+    .slick-dots button
+    {
+        font-size: 0;
+        color: transparent;
+        background: none;
+        cursor: pointer;
+
+        width: 11px;
+        height: 11px;
+
+        border: 1px solid #c8c8c8;
+        border-radius: 50%;
+        outline: none;
+    }
+
+    .slick-active button
+    {
+        background-color: #a9afb3;
+    }
+}

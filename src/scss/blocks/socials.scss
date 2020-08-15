@@ -4,14 +4,21 @@
 {
     background-color: vars.$light_gray;
 
-    padding: 125px 0 175px;
+    padding: 125px 0 70px;
     width: 100%;
+}
+
+.socials__link
+{
+    display: block;
+    margin: 0 auto 32px;
+    width: 32px;
+    height: 27px;   
 }
 
 .socials__icon
 {
     display: block;
-    margin: 0 auto 32px;
 }
 
 .socials__title
@@ -41,5 +48,6 @@
     font-weight: normal;
     font-style: italic;
     color: vars.$gray;
+    line-height: 34px;
 }
 

@@ -14,11 +14,6 @@ const imagemin = require('gulp-imagemin')
 sass.compiler = require('sass') // устанавливаем Dart Sass в качестве компилятора
 
 
-//==========================================================
-//******* JS отключен от вочинга, билда и html файла ******* 
-//==========================================================
-
-
 let source_folder = 'src'
 let build_folder = 'dest'
 
@@ -57,7 +52,7 @@ function browsersync()
     ({
         server: { baseDir: build_folder },
         notify: false,
-        online: false
+        online: true
     })
 }
 
@@ -103,7 +98,7 @@ function watchFiles()
 {
     watch(path.watch.html, html)
     watch(path.watch.css, css)
-    //watch(path.watch.js, scripts)
+    watch(path.watch.js, scripts)
     watch(path.watch.img, images)
 }
 
@@ -112,8 +107,7 @@ function clear()
     return del(path.clean)
 }
 
-//let build = series(clear, parallel(html, css, scripts, images))
-let build = series(clear, parallel(html, css, images))
+let build = series(clear, parallel(html, css, scripts, images))
 
 exports.images = images
 exports.clear = clear

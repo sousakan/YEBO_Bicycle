@@ -23,6 +23,7 @@
     color: vars.$gray;
     font-size: 24px;
     font-style: italic;
+    line-height: 34px;
 
     margin-bottom: 24px;
 }
@@ -34,6 +35,17 @@
 
     width: 530px;
     height: 70px;
+
+    @media (max-width: vars.$breakpoint_md)
+    {
+        min-width: 70%;
+        max-width: 90%;
+    }
+
+    @media (max-width: vars.$breakpoint_sm)
+    {
+        height: 50px;
+    }
 }
 
 .subscribe__input
@@ -55,11 +67,16 @@
     {
         outline: 1px solid vars.$black;
     }
+
+    @media (max-width: vars.$breakpoint_sm)
+    {
+        font-size: 16px;
+    }
 }
 
 .subscribe__submit
 {
-    padding: 20px 45px;
+    padding: 0 45px;
 
     font-size: 24px;
     font-weight: 300;
@@ -74,8 +91,18 @@
 
     transition: background .2s linear;
 
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+
     &:hover
     {
         background-color: darken(#64C29E, 20%);
+    }
+
+    @media (max-width: vars.$breakpoint_sm)
+    {
+        font-size: 20px;
+        padding: 0 25px;
     }
 }

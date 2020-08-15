@@ -24,7 +24,8 @@
     "imagemin-jpegtran": "^7.0.0",
     "imagemin-optipng": "^8.0.0",
     "imagemin-svgo": "^8.0.0",
-    "sass": "^1.26.10"
+    "sass": "^1.26.10",
+    "slick-carousel": "^1.8.1"
   },
   "dependencies": {}
 }

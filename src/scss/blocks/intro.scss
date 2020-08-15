@@ -1,7 +1,11 @@
+@use 'vars';
+
 .intro
 {
     width: 100%;
-    height: 800px;
-    padding-top: 35px;
+    height: 100vh;
     background: #F4F5FB url('../../img/intro.jpg') center no-repeat;
+    background-size: cover;
+
+    overflow: hidden;
 }

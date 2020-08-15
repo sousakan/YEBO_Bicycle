@@ -3,7 +3,18 @@
 .nav
 {
     display: flex;
-    justify-content: space-between;    
+    justify-content: space-between;  
+    align-items: center;  
+
+    position: relative;
+
+    width: 100%;
+    height: 20vh;
+
+    @media (max-width: vars.$breakpoint_md)
+    {
+        height: 10vh
+    }
 }
 
 .nav__links
@@ -13,18 +24,67 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    flex: 1;
+    
+    width: 625px;
+    height: 85px;
+    margin: 0 auto;
+
+    @media (max-width: vars.$breakpoint_md)
+    {
+        margin: 0;
+        padding: 20vh 0 10vh;
+
+        position: fixed;
+        top: 0;
+        right: 0;
+        z-index: 5;
+
+        flex-direction: column;
+
+        transform: translateX(100%);
+
+        width: 70%;
+        height: 100vh;
+
+        background-color: vars.$black;
+
+        transition: transform .2s linear;
+
+        &--active
+        {
+            transform: translateX(0);
+        }
+    }
 }
 
 .nav__item
 {
     position: relative;
 
-    &:first-child::after
+    &:nth-child(2n - 1)::after
     {
         content: ".";
         position: absolute;
-        right: -50px
+        right: -40px
+    }
+
+    &:nth-child(2)
+    {
+        margin-right: 180px;
+    }
+
+
+    @media (max-width: vars.$breakpoint_md)
+    {
+        &:nth-child(2)
+        {
+            margin: 0;
+        }
+
+        &:nth-child(2n - 1)::after
+        {
+            display: none;
+        }
     }
 }
 
@@ -53,13 +113,33 @@
 
             background-color: vars.$nav_black;
         }
+    }
+
+    @media (max-width: vars.$breakpoint_md)
+    {
+        color: vars.$white;
+
+        &::after
+        {
+            display: none;
+        }
 
     }
 }
 
 .nav__img
 {
-    margin: 0 55px
+    display: block;
+
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+
+    @media (max-width: vars.$breakpoint_md)
+    {
+        transform: translate(-50%, 10%);
+    }
 }
 
 .nav__logo
@@ -68,5 +148,3 @@
     width: 94px;
     height: 85px;
 }
-
-
