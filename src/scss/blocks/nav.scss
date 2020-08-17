@@ -32,7 +32,7 @@
     @media (max-width: vars.$breakpoint_md)
     {
         margin: 0;
-        padding: 20vh 0 10vh;
+        padding: 20vh 0 20vh;
 
         position: fixed;
         top: 0;
@@ -59,6 +59,8 @@
 
 .nav__item
 {
+    transition: transform .3s linear, opacity .3s linear;
+
     position: relative;
 
     &:nth-child(2n - 1)::after
@@ -76,6 +78,10 @@
 
     @media (max-width: vars.$breakpoint_md)
     {
+        transform: translateX(100px);
+        opacity: 0;
+
+
         &:nth-child(2)
         {
             margin: 0;
@@ -147,4 +153,19 @@
     display: block;
     width: 94px;
     height: 85px;
+}
+
+@keyframes navItemFade
+{
+    from
+    {
+        transform: translateX(50px);
+        opacity: 0;
+    }
+
+    to
+    {
+        transform: translateX(0);
+        opacity: 1;
+    }
 }

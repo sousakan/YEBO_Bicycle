@@ -24,6 +24,13 @@
     font-weight: bold;
     letter-spacing: 3.6px;
     font-family: inherit;
+
+    @media (max-width: vars.$breakpoint_sm)
+    {
+        padding: 0 20px;
+
+        font-size: 16px;
+    }
 }
 
 .about__text
@@ -33,4 +40,11 @@
     font-size: 18px;
     font-weight: normal;
     line-height: 34px;
+
+    @media (max-width: vars.$breakpoint_sm)
+    {
+        padding: 0 20px;
+
+        font-size: 16px;
+    }
 }

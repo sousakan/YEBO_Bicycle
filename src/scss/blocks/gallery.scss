@@ -1,75 +1,53 @@
 @use 'vars';
 
-.gallery__box
+.gallery
 {
     width: 100%;
+}
 
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-
-    &--top
-    {
-        grid-template-areas: 
-        "item1 item1 item2"
-        "item1 item1 item2"
-        "item1 item1 item3";
-    }
-
-    &--middle
-    {
-        grid-template-areas: 
-        "item1 item3 item3"
-        "item1 item3 item3"
-        "item2 item3 item3";
-    }
-
-    &--bottom
-    {
-        grid-template-areas: 
-        "item1 item2 item4"
-        "item1 item2 item4"
-        "item1 item3 item4";
-    }
+.gallery__row
+{
+    display: flex;
 
     @media (max-width: vars.$breakpoint_xl)
     {
-        grid-template-columns: repeat(2, 1fr);
-
-        &--top
-        {
-            grid-template-areas: 
-            "item1 item1"
-            "item2 item2"
-            "item3 item3";
-        }
-    
-        &--middle
-        {
-            grid-template-areas: 
-            "item1 item1"
-            "item2 item2"
-            "item3 item3";
-        }
-    
-        &--bottom
-        {
-            grid-template-areas: 
-            "item1 item1"
-            "item2 item2"
-            "item3 item3"
-            "item4 item4";
-        }
+        flex-direction: column;
     }
 }
 
-.gallery__container
+.gallery__column
 {
-    background-color: vars.$white;
+    display: flex;
+    flex-direction: column;
+    
+    &--big
+    {
+        flex: 2;
+    }
 
-    padding: 50px 0;
+    &--small
+    {
+        flex: 1;
+    }
+}
 
+.gallery__photo
+{
     width: 100%;
     height: 100%;
+
+    position: relative;
+
+    background-color: vars.$item_bg;
+    
+    cursor: pointer;
+}
+
+.gallery__content
+{
+    flex: 1;
+
+    padding: 70px 67px 95px;
 
     position: relative;
 
@@ -78,50 +56,47 @@
         content: "";
 
         position: absolute;
-        bottom: 0;
         left: 50%;
-        transform: translate(-50%, 50%) rotate(45deg);
+        bottom: 0;
+        transform: translate(-50%, 100%);
 
-        width: 18px;
-        height: 18px;
-        background-color: inherit;
+        width:  0;
+        height: 0;
+        border: 10px solid transparent;
+        border-top: 10px solid vars.$white;
+    }
 
+    @media (max-width: vars.$breakpoint_xxl)
+    {
+        padding: 70px 40px 95px;
     }
 }
 
 .gallery__logo
 {
-    margin: 0 auto 27px;
-}
-
-.gallery__icon
-{
-    margin: 0 auto;
     display: block;
+    margin: 0 auto 30px;
 }
 
 .gallery__title
 {
-    font-size: 18px;
-    font-weight: bold;
-    letter-spacing: 3.6px;
-    line-height: 30px;
     color: vars.$black;
+    font-size: 18px;
+    font-weight: 700;
+    text-transform: uppercase;
     text-align: center;
 
-    margin-bottom: 17px;
+    letter-spacing: 3.6px;
+
+    margin-bottom: 25px;
 }
 
 .gallery__text
 {
-    width: 80%;
-    margin: 0 auto;
-
-    font-size: 16px;
-    font-weight: normal;
-    letter-spacing: 1px;
-    line-height: 30px;
     color: vars.$gray;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 30px;
 
     position: relative;
 
@@ -130,33 +105,45 @@
         content: "";
 
         position: absolute;
-        bottom: -10px;
+        bottom: -40px;
         left: 50%;
         transform: translateX(-50%);
 
         width: 50px;
         height: 1px;
-
-        background-color: vars.$black;
-        opacity: .2;
+        background-color: rgba(vars.$black, .2);
     }
-}
-
-.gallery__inner
-{
-    width: 100%;
-    height: 100%;
-
-    position: relative;
 }
 
 .gallery__image
 {
     width: 100%;
-    height: 100%;
-    display: block;
+}
 
+.gallery__img
+{
+    width: 100%;
+    height: 100%;
+
+    display: block;
     object-fit: cover;
+
+    transition: opacity .2s linear;
+
+    .gallery__photo &
+    {
+        position: absolute; //позволяет родительскому блоку не обращать внимание на картинку
+
+        @media (max-width: vars.$breakpoint_xl)
+        {
+            position: static;
+        }
+    }
+
+    .gallery__photo:hover &
+    {
+        opacity: .4;
+    }
 }
 
 .gallery__sprite
@@ -164,26 +151,20 @@
     position: absolute;
     top: 50%;
     left: 50%;
-
     transform: translate(-50%, -50%);
-}
 
-.gallery__item:nth-child(1)
-{
-    grid-area: item1;
-}
+    opacity: 0;
 
-.gallery__item:nth-child(2)
-{
-    grid-area: item2;
-}
+    transition: opacity .2s linear;
 
-.gallery__item:nth-child(3)
-{
-    grid-area: item3;
-}
+    .gallery__photo:hover &
+    {
+        opacity: 1;
+    }
 
-.gallery__item:nth-child(4)
-{
-    grid-area: item4;
+    @media (max-width: vars.$breakpoint_sm)
+    {
+        max-height: 60%;
+        max-width: 60%;
+    }
 }

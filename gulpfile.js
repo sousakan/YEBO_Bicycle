@@ -10,6 +10,7 @@ const cleanCSS = require('gulp-clean-css')
 const fileinclude = require('gulp-file-include') 
 const newer = require('gulp-newer')
 const imagemin = require('gulp-imagemin')
+const htmlmin = require('gulp-htmlmin')
 
 sass.compiler = require('sass') // устанавливаем Dart Sass в качестве компилятора
 
@@ -60,6 +61,7 @@ function html()
 {
     return src(path.src.html)
     .pipe(fileinclude({ prefix: '//@' }))
+    .pipe(htmlmin({removeComments: true}))
     .pipe(dest(path.dest.html))
     .pipe(browserSync.stream())
 }

@@ -66,6 +66,7 @@
     &:focus
     {
         outline: 1px solid vars.$black;
+        color: vars.$black;
     }
 
     @media (max-width: vars.$breakpoint_sm)
